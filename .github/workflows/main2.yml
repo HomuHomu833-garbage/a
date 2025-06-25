@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  job:
+    runs-on: windows-2025
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Checkout 2
+        run: git clone https://github.com/HomuHomu833/Gacha-Horror-Recreation --depth=1
+
+      - name: Convert
+        run: python converts3tc.py Gacha-Horror-Recreation\images-png
+
+      - name: Publish Artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: images-dds
+          path: Gacha-Horror-Recreation\images-png
+
+      

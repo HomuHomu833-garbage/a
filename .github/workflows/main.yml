@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  job:
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Checkout 2
+        run: git clone https://github.com/HomuHomu833/Funkin-Psych-Online-Mobile-private --depth=1
+
+      - name: Convert
+        run: sudo chmod 777 * && python convertastc.py Funkin-Psych-Online-Mobile-private/assets
+
+      - name: Upload to GitHub
+        run: |
+          cd Funkin-Psych-Online-Mobile-private
+          git config --global user.name "HomuHomu833"
+          git config --global user.email "egzozu.be1.bas@gmail.com"
+          git remote set-url origin https://github.com/HomuHomu833/Funkin-Psych-Online-Mobile-private
+          git add .
+          git commit -q -m "ASTC"
+          git push -q
