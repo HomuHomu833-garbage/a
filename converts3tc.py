@@ -42,10 +42,9 @@ def main():
                         "-f", "DXT5",
                         "-m", "1",
                         "-if", "LINEAR",
-                        "-bc", "uniform",
+                        "-bc", "u",
                         "-y",
                         "-o", temp_output,
-                        "-nosrgb",
                         image_path
                     ]
 
