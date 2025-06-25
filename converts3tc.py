@@ -41,6 +41,8 @@ def main():
                         texconv_tool,
                         "-f", "DXT5",
                         "-m", "1",
+                        "-if", "LINEAR",
+                        "-bc", "u",
                         "-y",
                         "-o", temp_output,
                         image_path
