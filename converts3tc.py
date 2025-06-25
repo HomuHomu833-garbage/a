@@ -41,10 +41,11 @@ def main():
                         texconv_tool,
                         "-f", "DXT5",
                         "-m", "1",
-                        "-if", "CUBIC",
-                        "-bc", "u",
+                        "-if", "LINEAR",
+                        "-bc", "uniform",
                         "-y",
                         "-o", temp_output,
+                        "-nosrgb",
                         image_path
                     ]
 
